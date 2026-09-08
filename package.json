@@ -8,7 +8,9 @@
     "myoffice": "dist/cli.js"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org",
+    "@awolve:registry": "https://registry.npmjs.org"
   },
   "scripts": {
     "build": "tsc",
