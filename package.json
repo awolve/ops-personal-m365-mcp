@@ -1,6 +1,6 @@
 {
   "name": "@awolve/myoffice",
-  "version": "2.13.0",
+  "version": "2.13.1",
   "description": "CLI for personal Microsoft 365 access - email, calendar, tasks, OneDrive, Teams, Planner",
   "type": "module",
   "main": "dist/cli.js",
@@ -12,6 +12,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "test": "node --import tsx --test tests/signature.test.ts",
     "prepublishOnly": "npm run build",
     "postinstall": "echo '\n✅ @awolve/myoffice installed!\n\nRun: myoffice --help\nOr:  npx @awolve/myoffice --help\n'",
     "start": "node dist/cli.js",

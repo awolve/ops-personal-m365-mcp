@@ -273,7 +273,7 @@ myoffice mail download-attachment --id <message-id> --attachment-id <attach-id> 
 
 ## Testing
 
-No automated tests currently. Test manually by running CLI commands.
+`npm test` runs the unit tests in `tests/` (Node's built-in `node:test` via tsx, no Graph access needed). `tests/tasks.test.ts` is an older integration script that hits Graph; run it by hand with `npx tsx tests/tasks.test.ts`. Everything else: test manually by running CLI commands.
 
 Use `myoffice debug` to check version and auth state.
 

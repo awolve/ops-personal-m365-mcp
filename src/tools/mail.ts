@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { graphRequest, graphList, graphDownload } from '../utils/graph-client.js';
-import { getSignature, type SignatureStyle } from '../utils/signature.js';
+import { appendSignature, type SignatureStyle } from '../utils/signature.js';
 import { promises as fs } from 'fs';
 import { resolve } from 'path';
 
@@ -419,13 +419,6 @@ function resolveSignatureStyle(
   if (params.signatureStyle) return params.signatureStyle;
   if (params.useSignature === false) return 'none';
   return fallback;
-}
-
-/** Append the chosen signature, or return the body untouched if there is none. */
-function appendSignature(body: string, isHtml: boolean, style: SignatureStyle): string {
-  const signature = getSignature(style);
-  if (!signature) return body;
-  return isHtml ? `${body}<br><br>${signature}` : `${body}\n\n--\n${signature}`;
 }
 
 // Convert plain text to HTML (escape special chars, convert newlines to <br>)
